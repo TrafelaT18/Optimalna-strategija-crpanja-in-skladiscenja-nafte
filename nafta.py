@@ -2,7 +2,7 @@ from email.charset import QP
 import math
 
 # d - dobiček
-# X - trenutna zaloga
+# X - zaloga na začetku dneva
 # K - max izčrpana dnevna količna
 # P - cena nafte
 # STRc - stroški črpanja nafte
