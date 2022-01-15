@@ -7,9 +7,9 @@ import math
 # P - cena nafte
 # STRc - stroški črpanja nafte
 # STRs - stroški shranjevanja nafte
+# x - zaloga na koncu dneva
 
 def nafta(K, dni, P, S, STRc, STRs):
-    def nafta(K, dni, P, S, STRc, STRs):
     # npr. nafta(10, 3, 30, 40, [5, 10, 7],[13, 14, 9])
     koncni_rezultati = {}
     dnevni_rezultati = {}
@@ -27,11 +27,10 @@ def nafta(K, dni, P, S, STRc, STRs):
                     else:
                         pass
         M = max(dobicki_v_dnevu)
-        par = dnevni_rezultati[M]
-        X = x
+        trojica = dnevni_rezultati[M]
+        X = trojica[2] #nova zaloga naslednjega dne = končni zalogi danes
         d += M 
         koncni_rezultati[M] = dnevni_rezultati.get(M)
         dobicki_v_dnevu = []         
         dnevni_rezultati = {}
-    return koncni_rezultati
-
+    return koncni_rezultati 
