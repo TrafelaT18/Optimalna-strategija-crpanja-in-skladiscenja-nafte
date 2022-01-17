@@ -4,7 +4,7 @@ import math
 def nafta(dni, K,S, P, STRc, STRs):
     # npr. nafta(3, 10, 40,[10, 20, 30], [5, 10, 7], [3, 4, 9])
     inf = float('inf') # neskončnost
-    d = {(0, 0): 0} # slovar optimalnih dobičkov 
+    d = {(0, 0): 0} # slovar potencialnih optimalnih dobičkov 
     p = {(0, 0): None} # slovar parametrov 
     for i in range(dni): # za vsak dan od 1 naprej
         for x in range(S+1): # končna zaloga dne i
@@ -28,5 +28,5 @@ def nafta(dni, K,S, P, STRc, STRs):
         resitev[i, koncna_zaloga]=p[i, koncna_zaloga]
         koncna_zaloga = p[i, koncna_zaloga][3]
     resitev = dict(list(resitev.items())[::-1])
-    return (d[dni, 0], resitev) # optimalni dobiček in parametri za rekonstrukcijo
+    return (kandidati, max(kandidati)) # optimalni dobiček in parametri za rekonstrukcijo, d[dni, 0], resitev
 
