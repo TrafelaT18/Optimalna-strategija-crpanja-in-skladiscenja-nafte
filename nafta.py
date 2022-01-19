@@ -8,7 +8,7 @@ def nafta(dni, K,S, P, STRc, STRs):
     p = {(0, 0): None} # slovar parametrov 
     for i in range(dni): # za vsak dan od 1 naprej
         for x in range(S+1): # končna zaloga dne i
-            kandidati = [(-inf, (0, 0, 0))] # seznam dobičkov 
+            kandidati = [(-inf, (0, 0, 0,0))] # seznam dobičkov 
             for Qi in range(K+1): # koliko izčrpamo <= K
                 for Qp in range(max(0, Qi - x), S + Qi - x + 1):# višek če ni začetne zaloge<=koliko prodamo<=višek če je polna začetna zaloga(kapaciteta+višek)
                     x_vceraj = x + Qp - Qi # zaloga iz prejšnjega dne oz. začetna zaloga tega dne
